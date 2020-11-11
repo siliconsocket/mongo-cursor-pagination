@@ -38,7 +38,7 @@ module.exports = async function(collection, params) {
   // https://www.npmjs.com/package/mongoist#cursor-operations
   const findMethod = collection.findAsCursor ? 'findAsCursor' : 'find';
 
-  const query = collection[findMethod]({ $and: [cursorQuery, params.query] }, params.fields);
+  const query = collection[findMethod]({ $and: [cursorQuery, params.query] }, params.extras);
 
   /**
    * IMPORTANT
